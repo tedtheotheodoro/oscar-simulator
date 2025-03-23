@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Você Ganhou um Oscar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Você Ganhou um Oscar<br><span class="subtitle">You Just Won an Oscar</span></h1>
+    <button onclick="startGame()">Iniciar / Start</button>
+    <div id="game" class="hidden">
+      <h2>Escolha seu perfil / Choose your profile</h2>
+      <div class="choices">
+        <div onclick="selectRole('Ator / Actor')">Ator / Actor</div>
+        <div onclick="selectRole('Diretor / Director')">Diretor / Director</div>
+        <div onclick="selectRole('Roteirista / Screenwriter')">Roteirista / Screenwriter</div>
+      </div>
+      <div id="output"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
