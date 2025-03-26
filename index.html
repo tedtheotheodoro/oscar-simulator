@@ -8,8 +8,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container fade-in">
     <h1>Você Ganhou um Oscar<br><span class="subtitle">You Just Won an Oscar</span></h1>
+    
+    <div class="progress">Etapa <span id="stepNumber">1</span> de 3</div>
+
     <div id="step1">
       <h2>Escolha seu perfil / Choose your profile</h2>
       <div class="choices">
@@ -19,7 +22,7 @@
       </div>
     </div>
 
-    <div id="step2" class="hidden">
+    <div id="step2" class="hidden fade-in">
       <h2>Próxima decisão / Next move</h2>
       <p id="roleResult"></p>
       <div class="choices">
@@ -38,44 +41,12 @@
       </div>
     </div>
 
-    <div id="result" class="hidden">
+    <div id="result" class="hidden fade-in">
       <h2>Resultado / Outcome</h2>
       <p id="pathResult"></p>
     </div>
   </div>
 
-  <script>
-    let role = '';
-
-    function selectRole(selected) {
-      role = selected;
-      document.getElementById('step1').classList.add('hidden');
-      document.getElementById('step2').classList.remove('hidden');
-      document.getElementById('roleResult').innerText = `Perfil escolhido / Selected profile: ${role}`;
-    }
-
-    function selectPath(choice) {
-      document.getElementById('step2').classList.add('hidden');
-      document.getElementById('result').classList.remove('hidden');
-      let outcome = '';
-
-      switch (choice) {
-        case 'Assinar com a Marvel por 5 filmes':
-          outcome = 'Você entra no circuito blockbuster, ganha milhões, mas críticos torcem o nariz.\nYou join the blockbuster circuit, earn millions, but critics lose interest.';
-          break;
-        case 'Criar produtora com first-look deal':
-          outcome = 'Você ganha autonomia criativa, mas enfrenta pressão para entregar sucessos.\nYou gain creative control, but must deliver commercial hits.';
-          break;
-        case 'Fazer um filme autoral e intimista':
-          outcome = 'A crítica te reverencia, mas o público é limitado.\nCritics adore you, but the audience is niche.';
-          break;
-        case 'Sumir por 2 anos para criar mistério':
-          outcome = 'Sua ausência gera culto, mas o mercado esquece rápido.\nYour absence builds mystique, but Hollywood moves on quickly.';
-          break;
-      }
-
-      document.getElementById('pathResult').innerText = outcome;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
