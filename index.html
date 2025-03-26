@@ -2,16 +2,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Simulador Pós-Oscar</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container fade-in">
     <h1>Você Ganhou um Oscar<br><span class="subtitle">You Just Won an Oscar</span></h1>
-    
-    <div class="progress">Etapa <span id="stepNumber">1</span> de 3</div>
+
+    <div class="progress">Etapa <span id="stepNumber">1</span> de 4</div>
 
     <div id="step1">
       <h2>Escolha seu perfil / Choose your profile</h2>
@@ -26,24 +26,26 @@
       <h2>Próxima decisão / Next move</h2>
       <p id="roleResult"></p>
       <div class="choices">
-        <div onclick="selectPath('Assinar com a Marvel por 5 filmes')">
-          Assinar com a Marvel por 5 filmes<br><span class="small">Sign with Marvel for 5 films</span>
-        </div>
-        <div onclick="selectPath('Criar produtora com first-look deal')">
-          Criar produtora com first-look deal<br><span class="small">Create a studio with a first-look deal</span>
-        </div>
-        <div onclick="selectPath('Fazer um filme autoral e intimista')">
-          Fazer um filme autoral e intimista<br><span class="small">Make an intimate indie film</span>
-        </div>
-        <div onclick="selectPath('Sumir por 2 anos para criar mistério')">
-          Sumir por 2 anos para criar mistério<br><span class="small">Disappear for 2 years to build mystique</span>
-        </div>
+        <div onclick="selectPath('Marvel')">Assinar com a Marvel<br><span class="small">Sign with Marvel</span></div>
+        <div onclick="selectPath('Produtora')">Criar produtora<br><span class="small">Start a production company</span></div>
+        <div onclick="selectPath('Indie')">Fazer um filme autoral<br><span class="small">Make an indie film</span></div>
+        <div onclick="selectPath('Sumir')">Sumir por 2 anos<br><span class="small">Disappear for 2 years</span></div>
+      </div>
+    </div>
+
+    <div id="step3" class="hidden fade-in">
+      <h2>Como você lida com a mídia? / How do you handle the media?</h2>
+      <div class="choices">
+        <div onclick="mediaChoice('Polemico')">Dá entrevistas polêmicas<br><span class="small">Provocative interviews</span></div>
+        <div onclick="mediaChoice('Recluso')">Some das redes<br><span class="small">Goes off-grid</span></div>
+        <div onclick="mediaChoice('PR')">Segue plano de PR<br><span class="small">Follows PR strategy</span></div>
+        <div onclick="mediaChoice('Politico')">Fala sobre política<br><span class="small">Speaks on politics</span></div>
       </div>
     </div>
 
     <div id="result" class="hidden fade-in">
-      <h2>Resultado / Outcome</h2>
-      <p id="pathResult"></p>
+      <h2>Resultado Final / Final Outcome</h2>
+      <p id="finalResult"></p><button id="restartBtn" class="hidden" onclick="restart()">Recomeçar / Restart</button>
     </div>
   </div>
 

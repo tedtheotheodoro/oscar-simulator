@@ -73,3 +73,18 @@ h1 {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+button:hover {
+  background: #555;
+}
