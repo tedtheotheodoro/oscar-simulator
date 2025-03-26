@@ -1,0 +1,17 @@
+
+# Tipos:
+# feat     → Nova funcionalidade
+# fix      → Correção de bug
+# chore    → Tarefa técnica ou configuração
+# style    → Alteração de estilo/visual
+# refactor → Reorganização de código
+# i18n     → Internacionalização
+
+feat: descreva aqui a funcionalidade adicionada
+
+# Exemplo:
+# feat: adiciona etapa de mídia e lógica de reputação
+# fix: corrige bug de transição entre etapas
+# style: melhora responsividade no mobile
+
+# Apague estas linhas antes de salvar (elas são comentários).
