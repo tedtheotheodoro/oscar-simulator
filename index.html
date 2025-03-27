@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oscar Simulator</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="top-bar">
-      <div class="lang-switch">
-        <button onclick="setLanguage('pt')">PT</button>
-        <button onclick="setLanguage('en')">EN</button>
-      </div>
-      <div class="theme-switch">
-        <button onclick="toggleTheme()">🌕</button>
-      </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oscar Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <div class="lang-switch">
+      <button onclick="setLanguage('pt')">PT</button>
+      <button onclick="setLanguage('en')">EN</button>
     </div>
-    <div id="app"></div>
+    <div class="theme-switch">
+      <button onclick="toggleTheme()">🌕</button>
+    </div>
+  </div>
 
-    <script src="questions.js"></script>
-    <script src="script.js"></script>
-    <script src="firebase.js"></script>
-  </body>
+  <div id="app">
+    <!-- Conteúdo dinâmico será renderizado aqui -->
+  </div>
+
+  <!-- ORDEM IMPORTA: perguntas > finais > lógica principal -->
+  <script src="questions.js"></script>
+  <script src="endings.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
