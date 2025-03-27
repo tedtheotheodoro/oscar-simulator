@@ -8,7 +8,7 @@ let lang = localStorage.getItem("lang") || "pt";
 function setLanguage(language) {
   lang = language;
   localStorage.setItem("lang", language);
-  showQuestion();
+  renderStartScreen();
 }
 
 function startSimulation() {
@@ -99,14 +99,19 @@ function createLangAndThemeButtons() {
   app.appendChild(toggle);
 }
 
-window.onload = () => {
+function renderStartScreen() {
   app.innerHTML = `
     <h1>🏆 Oscar Simulator</h1>
-    <p>${lang === "pt" ? "Você acabou de ganhar um Oscar. E agora?" : "You just won an Oscar. What happens next?"}</p>
-    <em>${lang === "pt" ? "Simule sua jornada pós-estatueta." : "Simulate your post-statuette journey."}</em><br><br>
-    <button class="main-button" onclick="startSimulation()">
+    <p>${lang === "pt"
+      ? "Você acabou de ganhar um Oscar. E agora?"
+      : "You just won an Oscar. What happens next?"}</p>
+    <br><br>
+    <button class="main-button" id="start-button">
       ${lang === "pt" ? "Começar" : "Start"}
     </button>
   `;
+  document.getElementById("start-button").addEventListener("click", startSimulation);
   createLangAndThemeButtons();
-};
+}
+
+document.addEventListener("DOMContentLoaded", renderStartScreen);

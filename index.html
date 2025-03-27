@@ -6,8 +6,8 @@
   <title>Oscar Simulator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="light">
-  <!-- Top Bar: Idioma e Dark Mode -->
+<body>
+  <!-- Top bar -->
   <div class="top-bar">
     <div class="lang-switch">
       <button onclick="setLanguage('pt')">PT</button>
@@ -18,15 +18,12 @@
     </div>
   </div>
 
-  <!-- Container principal -->
-  <div class="container" id="app">
-    <!-- Tela de introdução -->
-    <div class="start-screen">
-      <h1>🏆 Oscar Simulator</h1>
-      <p class="subtitle-pt">Você acabou de ganhar um Oscar. E agora?</p>
-      <p class="subtitle-en"><em>You just won an Oscar. What happens next?</em></p>
-      <button onclick="startGame()">Começar / Start</button>
-    </div>
+  <!-- Container principal com IDs para controle via JS -->
+  <div id="app" class="container">
+    <h1>🏆 Oscar Simulator</h1>
+    <p id="intro-text"></p>
+    <em id="subtext"></em><br><br>
+    <button class="main-button" id="start-button"></button>
   </div>
 
   <!-- Scripts -->
