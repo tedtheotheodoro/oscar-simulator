@@ -1,77 +1,112 @@
-// script.js com mais finais baseados em 5 variáveis (sarcasmo incluso)
+// script.js com lógica de finais baseada em IF explícito e 5 variáveis
 
-let userProfile = null;
-let userProject = null;
-let userAds = null;
-let userBuzz = null;
-let userPath = null;
+const app = document.getElementById("app");
+let currentQuestion = 0;
+let userAnswers = [];
+let lang = localStorage.getItem("lang") || "pt";
 
-function avaliarDesfecho(lang = 'pt') {
-  const p = userProfile;
-  const pr = userProject;
-  const a = userAds;
-  const b = userBuzz;
-  const f = userPath;
+function setLanguage(language) {
+  lang = language;
+  localStorage.setItem("lang", language);
+  showQuestion();
+}
 
-  if (p === "Roteirista" && pr === "Filme autoral" && a === "Recusa" && b === "Aclamado pela crítica" && f === "Novo projeto autoral") {
-    return lang === 'pt'
+function startSimulation() {
+  currentQuestion = 0;
+  userAnswers = [];
+  showQuestion();
+}
+
+function showQuestion() {
+  app.innerHTML = "";
+  const question = questions[currentQuestion];
+
+  const title = document.createElement("h2");
+  title.innerText = question.title[lang];
+  app.appendChild(title);
+
+  question.options.forEach((option) => {
+    const button = document.createElement("button");
+    button.className = "main-button";
+    button.innerText = option[lang];
+    button.onclick = () => handleAnswer(option["pt"]);
+    app.appendChild(button);
+  });
+
+  createLangAndThemeButtons();
+}
+
+function handleAnswer(answer) {
+  userAnswers.push(answer);
+  currentQuestion++;
+  if (currentQuestion < questions.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  const [profile, project, publicity, buzz, path] = userAnswers;
+  let result = "";
+
+  if (profile === "Roteirista" && project === "Filme autoral" && publicity === "Recusa" && buzz === "Aclamado pela crítica" && path === "Novo projeto autoral") {
+    result = lang === "pt"
       ? "Você virou referência em faculdade de cinema alternativo. Seu filme é projetado em mostras com 5 pessoas e uma cabra."
       : "You became a reference in alternative film schools. Your movie screens at festivals for 5 people and a goat.";
-  }
-  if (p === "Ator" && pr === "Série streaming" && a === "Aceita" && b === "Sucesso de público" && f === "Contrato com streaming") {
-    return lang === 'pt'
+  } else if (profile === "Ator" && project === "Série streaming" && publicity === "Aceita" && buzz === "Sucesso de público" && path === "Contrato com streaming") {
+    result = lang === "pt"
       ? "Seu rosto virou figurinha de WhatsApp e estampa canecas irônicas."
       : "Your face is now a WhatsApp sticker and printed on ironic mugs.";
-  }
-  if (p === "Diretor" && pr === "Filme autoral" && a === "Recusa" && b === "Aclamado pela crítica" && f === "Outra indicação ao Oscar") {
-    return lang === 'pt'
+  } else if (profile === "Diretor" && project === "Filme autoral" && publicity === "Recusa" && buzz === "Aclamado pela crítica" && path === "Outra indicação ao Oscar") {
+    result = lang === "pt"
       ? "Você recusou 3 convites para a Marvel. Vive de elogios da crítica e pão artesanal."
       : "You turned down 3 offers from Marvel. Living on critical praise and artisan bread.";
-  }
-  if (p === "Roteirista" && pr === "Série streaming" && a === "Recusa" && b === "Aclamado pela crítica" && f === "Sumir da mídia") {
-    return lang === 'pt'
+  } else if (profile === "Roteirista" && project === "Série streaming" && publicity === "Recusa" && buzz === "Aclamado pela crítica" && path === "Sumir da mídia") {
+    result = lang === "pt"
       ? "Ganhou 3 Emmys, nenhum reconhecimento da família. Pelo menos a crítica ama você."
       : "Won 3 Emmys, no recognition from family. At least the critics love you.";
-  }
-  // Novos finais personalizados com base nas 5 escolhas
-  if (p === "Diretor" && pr === "Série streaming" && a === "Recusa" && b === "Aclamado pela crítica" && f === "Novo projeto autoral") {
-    return lang === 'pt'
-      ? "Você virou lenda no Letterboxd, mas ninguém fora da bolha sabe quem você é."
-      : "You're a Letterboxd legend, but no one outside your bubble knows who you are.";
-  }
-  if (p === "Ator" && pr === "Filme autoral" && a === "Recusa" && b === "Aclamado pela crítica" && f === "Sumir da mídia") {
-    return lang === 'pt'
-      ? "Você entregou a performance da década... e foi cancelado por um tweet de 2009."
-      : "You gave the performance of the decade... and got cancelled for a 2009 tweet.";
-  }
-  if (p === "Diretor" && pr === "Blockbuster" && a === "Aceita" && b === "Sucesso de público" && f === "Contrato com streaming") {
-    return lang === 'pt'
-      ? "Parabéns, você virou funcionário do mês da Netflix. Pra sempre."
-      : "Congrats, you're Netflix's employee of the month. Forever.";
-  }
-  if (p === "Ator" && pr === "Blockbuster" && a === "Aceita" && b === "Ambos" && f === "Outra indicação ao Oscar") {
-    return lang === 'pt'
-      ? "Você não atuou, mas ganhou prêmio. Parabéns por existir."
-      : "You didn’t act, but won awards. Congrats for existing.";
-  }
-  if (p === "Roteirista" && pr === "Blockbuster" && a === "Recusa" && b === "Sucesso de público" && f === "Sumir da mídia") {
-    return lang === 'pt'
-      ? "O filme foi um sucesso. Ninguém sabe que você escreveu. Nem você lembra."
-      : "The movie was a hit. No one knows you wrote it. Not even you remember.";
+  } else {
+    result = lang === "pt"
+      ? "Você trilhou um caminho tão peculiar que o algoritmo surtou. Parabéns."
+      : "Your path was so unexpected the simulator glitched. Congrats.";
   }
 
-  return lang === 'pt'
-    ? "Você trilhou um caminho tão peculiar que o algoritmo surtou. Parabéns."
-    : "Your path was so unexpected the simulator glitched. Congrats.";
+  app.innerHTML = `
+    <h2>${lang === "pt" ? "Resultado da simulação:" : "Simulation result:"}</h2>
+    <p>${result}</p>
+    <button class="secondary-button" onclick="startSimulation()">
+      ${lang === "pt" ? "Reiniciar" : "Restart"}
+    </button>
+  `;
+  createLangAndThemeButtons();
 }
 
-function displayResult() {
-  const lang = localStorage.getItem("lang") || 'pt';
-  const resultText = avaliarDesfecho(lang);
-  const resultDiv = document.createElement("div");
-  resultDiv.className = "result";
-  resultDiv.innerText = resultText;
-  document.getElementById("app").innerHTML = "";
-  document.getElementById("app").appendChild(resultDiv);
+function createLangAndThemeButtons() {
+  const ptBtn = document.createElement("button");
+  ptBtn.innerText = "PT";
+  ptBtn.onclick = () => setLanguage("pt");
+  app.appendChild(ptBtn);
+
+  const enBtn = document.createElement("button");
+  enBtn.innerText = "EN";
+  enBtn.onclick = () => setLanguage("en");
+  app.appendChild(enBtn);
+
+  const toggle = document.createElement("button");
+  toggle.innerText = "🌖";
+  toggle.onclick = () => document.body.classList.toggle("dark");
+  app.appendChild(toggle);
 }
 
+window.onload = () => {
+  app.innerHTML = `
+    <h1>🏆 Oscar Simulator</h1>
+    <p>${lang === "pt" ? "Você acabou de ganhar um Oscar. E agora?" : "You just won an Oscar. What happens next?"}</p>
+    <em>${lang === "pt" ? "Simule sua jornada pós-estatueta." : "Simulate your post-statuette journey."}</em><br><br>
+    <button class="main-button" onclick="startSimulation()">
+      ${lang === "pt" ? "Começar" : "Start"}
+    </button>
+  `;
+  createLangAndThemeButtons();
+};

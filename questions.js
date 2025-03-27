@@ -1,4 +1,4 @@
-// questions.js com todas as etapas do fluxo para desfechos finais
+// questions.js com cinco etapas: perfil, projeto, publicidade, repercussão e próximos passos
 
 const questions = [
   {
@@ -57,3 +57,4 @@ const questions = [
     ]
   }
 ];
+
