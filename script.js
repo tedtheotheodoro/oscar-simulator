@@ -80,6 +80,13 @@ function showResult() {
 
 // 6. TOPO E CONFIGURAÇÕES
 function renderTopBar() {
+  // Remove qualquer instância anterior da barra
+  const existingTopBar = document.querySelector(".top-bar");
+  if (existingTopBar) {
+    existingTopBar.remove();
+  }
+
+  // Cria uma nova barra
   const topBar = document.createElement("div");
   topBar.className = "top-bar";
   topBar.innerHTML = `
