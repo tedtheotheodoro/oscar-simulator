@@ -1,44 +1,78 @@
 
-# 🎬 Você Ganhou um Oscar — E Agora?
-## 🏆 You Just Won an Oscar — What’s Next?
+# 🏆 Oscar Simulator
 
-Um simulador interativo bilíngue que explora os desdobramentos de uma vitória no Oscar. Escolha seu perfil e tome decisões estratégicas que moldarão sua carreira.
+Imagine que você acabou de ganhar um Oscar...
+E agora?
 
-An interactive bilingual simulator that explores the consequences of winning an Oscar. Choose your profile and make strategic decisions that will shape your career.
+Explore diferentes trajetórias pós-premiação, tome decisões, veja as consequências e descubra seu perfil na indústria cinematográfica.
+
+🌐 [Acesse o simulador](https://oscar-simulator.vercel.app)
 
 ---
 
-## 🔧 Como usar / How to use
+## 📸 Preview
 
-1. Baixe ou clone este repositório  
-   Download or clone this repository:
+![preview](preview.gif)
+
+---
+
+## ✨ Funcionalidades
+
+- Internacionalização dinâmica (PT / EN)
+- Tela inicial visual com entrada animada
+- Trilha de decisões em 3 etapas
+- Cálculo de reputação (prestígio / lucro / relevância)
+- Resultado final personalizado
+- Salvamento no Firebase (modo leve)
+- Modo escuro / claro com memória de preferência
+
+---
+
+## 🚀 Como rodar localmente
 
 ```bash
-git clone https://github.com/tedtheotheodoro/oscar-simulator.git
+git clone https://github.com/seu-usuario/oscar-simulator.git
+cd oscar-simulator
+npm install (caso use Vite/React futuramente)
+Live Server no index.html (ou use extensão no VS Code)
 ```
 
-2. Abra `index.html` no seu navegador  
-   Open `index.html` in your browser
+---
+
+## 🔐 Como configurar o Firebase
+
+1. Acesse [Firebase Console](https://console.firebase.google.com)
+2. Crie um novo projeto
+3. Habilite Firestore Database
+4. No código `firebase.js`, cole suas credenciais:
+
+```js
+const firebaseConfig = {
+  apiKey: "...",
+  authDomain: "...",
+  projectId: "...",
+  ...
+};
+```
 
 ---
 
-## 🧩 Tecnologias / Technologies
+## 📌 Roadmap futuro
 
-- HTML5
-- CSS3 (layout moderno e responsivo)
-- JavaScript puro
-- Suporte bilíngue PT/EN
-
----
-
-## 🚀 Próximos passos / Next steps
-
-- Adicionar ramificações de decisões
-- Exibir consequências de cada escolha (prestígio, lucro, relevância)
-- Integrar com Firebase para salvar escolhas e estatísticas
+- Exportar resultado em PDF
+- Autenticação com Google para salvar trajetórias
+- Ranking público e compartilhamento
+- Perfis jogáveis com histórico
+- Desafios semanais (modo "Black Mirror")
 
 ---
 
-Feito com paixão por narrativas e sistemas interativos 🎥  
-Made with passion for storytelling and interactive systems.
+## 🧠 Idealização
 
+Criado por [@tedtheotheodoro](https://github.com/tedtheotheodoro) como experimento interativo sobre fama, cultura pop e escolhas criativas.
+
+Inspiração visual: sites de storytelling minimalista + simuladores narrativos estilo RPG.
+
+---
+
+💬 Feedbacks e colaborações são bem-vindos!
