@@ -22,8 +22,10 @@ function renderIntro() {
     <h1>🏆 Oscar Simulator</h1>
     <p>${lang === "pt" ? "Você acabou de ganhar um Oscar. E agora?" : "You just won an Oscar. What happens next?"}</p>
     <em>${lang === "pt" ? "Simule sua jornada pós-estatueta." : "Simulate your post-statuette journey."}</em>
+    <br><br>
     <button class="main-button" onclick="startSimulation()">${lang === "pt" ? "Começar" : "Start"}</button>
   `;
+  renderTopBar();
 }
 
 // 4. Início da simulação
