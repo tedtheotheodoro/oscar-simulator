@@ -2,35 +2,36 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Oscar Simulator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="light">
+  <!-- Top Bar: Idioma e Dark Mode -->
   <div class="top-bar">
-    <div class="language-switch">
-      <button onclick="switchLanguage('pt')">PT</button>
-      <button onclick="switchLanguage('en')">EN</button>
+    <div class="lang-switch">
+      <button onclick="setLanguage('pt')">PT</button>
+      <button onclick="setLanguage('en')">EN</button>
     </div>
-    <button id="darkModeToggle" onclick="toggleDarkMode()">🌕</button>
-  </div>
-  <div class="container start-screen">
-    <h1>🏆 Oscar Simulator</h1>
-    <p id="subtitle">Você acabou de ganhar um Oscar. E agora?</p>
-    <p id="subtitle-en" class="subtitle-en"><em>You just won an Oscar. What happens next?</em></p>
-    <button onclick="startGame()" id="startBtn">Começar / Start</button>
-  </div>
-  <div class="container game hidden" id="game">
-    <h2 id="questionTitle">Choose your profile</h2>
-    <div id="options" class="options"></div>
-    <div class="controls">
-      <button onclick="saveSimulation()" id="saveBtn">Salvar simulação</button>
-      <button onclick="restartGame()" id="restartBtn">Reiniciar</button>
+    <div class="theme-switch">
+      <button onclick="toggleTheme()">🌕</button>
     </div>
   </div>
+
+  <!-- Container principal -->
+  <div class="container" id="app">
+    <!-- Tela de introdução -->
+    <div class="start-screen">
+      <h1>🏆 Oscar Simulator</h1>
+      <p class="subtitle-pt">Você acabou de ganhar um Oscar. E agora?</p>
+      <p class="subtitle-en"><em>You just won an Oscar. What happens next?</em></p>
+      <button onclick="startGame()">Começar / Start</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script src="questions.js"></script>
-  <script src="i18n.js"></script>
-  <script src="firebase.js"></script>
   <script src="script.js"></script>
+  <script src="firebase.js"></script>
 </body>
 </html>

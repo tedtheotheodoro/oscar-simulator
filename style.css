@@ -1,100 +1,162 @@
-/* style.css revisado para restaurar o visual anterior com hierarquia visual clara */
-
-body {
+/* Reset básico */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f5f5f5;
-  color: #222;
-  transition: background 0.3s, color 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 1rem;
+  padding: 0;
 }
 
+/* Estilos gerais */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Tema claro */
+body.light {
+  background: #f5f5f5;
+  color: #222;
+}
+
+/* Tema escuro */
 body.dark {
-  background-color: #121212;
+  background: #121212;
   color: #eee;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+/* Barra superior */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: transparent;
+  z-index: 1000;
 }
 
-h2 {
-  font-size: 1.4rem;
+/* Idioma e tema */
+.lang-switch button,
+.theme-switch button {
+  margin: 0 0.25rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+.lang-switch button:hover,
+.theme-switch button:hover {
+  background-color: #666;
+}
+
+/* Container central */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 6rem;
+}
+
+/* Telas do app */
+.start-screen h1 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.subtext {
+.subtitle-pt {
+  font-size: 1rem;
+}
+.subtitle-en {
   font-size: 0.9rem;
   font-style: italic;
   opacity: 0.8;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-button {
+.start-screen button {
   font-size: 1rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.2rem;
   border: none;
   border-radius: 12px;
-  margin: 0.5rem;
-  cursor: pointer;
-  background-color: #444;
-  color: #fff;
-  transition: background 0.2s;
-}
-
-button:hover {
   background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.start-screen button:hover {
+  background-color: #555;
 }
 
-.option-button {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 0.5rem auto;
-  font-size: 1.1rem;
-  padding: 1rem;
+/* Estilo dos botões de pergunta */
+.options button {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.options button:hover {
+  background-color: #555;
 }
 
-.secondary-button {
-  background-color: #bbb;
-  color: #222;
+/* Botões secundários */
+.secondary-buttons {
+  margin-top: 2rem;
+}
+.secondary-buttons button {
+  margin: 0 0.5rem;
+  padding: 0.6rem 1rem;
   font-size: 0.9rem;
-  padding: 0.5rem 1rem;
+  background-color: #666;
+  color: white;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
+}
+.secondary-buttons button:hover {
+  background-color: #888;
 }
 
-.language-toggle,
-.theme-toggle {
-  position: absolute;
-  top: 1rem;
-  margin: 0 0.25rem;
-}
-
-.language-toggle {
-  left: 1rem;
-}
-
-.theme-toggle {
-  right: 1rem;
-}
-
-#app {
-  text-align: center;
-  max-width: 600px;
-  width: 100%;
-}
-
+/* Resultado final */
 .result {
   font-size: 1.2rem;
   margin-top: 2rem;
-  padding: 1rem;
-  background: rgba(0,0,0,0.05);
-  border-radius: 8px;
+  max-width: 600px;
 }
+
+/* Responsivo para telas menores */
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lang-switch,
+  .theme-switch {
+    margin-bottom: 0.5rem;
+  }
+
+  .start-screen button,
+  .options button,
+  .secondary-buttons button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+}
+
 
