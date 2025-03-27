@@ -7,6 +7,7 @@ function startGame() {
 
 function setLang(lang) {
   localStorage.setItem("lang", lang);
+  updateLanguageElements();
   if (document.getElementById("start-screen").classList.contains("hidden")) {
     renderStep(currentStep);
   } else {
@@ -15,6 +16,12 @@ function setLang(lang) {
         ? "You just won an Oscar. What happens next?"
         : "Você acabou de ganhar um Oscar. E agora?";
   }
+}
+
+function updateLanguageElements() {
+  const lang = localStorage.getItem("lang") || "pt";
+  document.getElementById("saveBtn").innerText = lang === "en" ? "Save simulation" : "Salvar simulação";
+  document.getElementById("restartBtn").innerText = lang === "en" ? "Restart" : "Reiniciar";
 }
 
 function toggleTheme() {
@@ -133,3 +140,5 @@ function restart() {
   window.selectedRole = "";
   renderStep(0);
 }
+
+window.onload = updateLanguageElements;
