@@ -48,3 +48,18 @@ button:hover {
 .choices div:hover {
   background: #ccc;
 }
+
+body.dark .choices div {
+  background: #333;
+  color: #fff;
+}
+body.dark .choices div:hover {
+  background: #555;
+}
+body.dark button {
+  background: #444;
+  color: #fff;
+}
+body.dark button:hover {
+  background: #666;
+}
