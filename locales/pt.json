@@ -1,0 +1,34 @@
+
+{
+  "title": "Você Ganhou um Oscar",
+  "subtitle": "E Agora?",
+  "step1": "Escolha seu perfil",
+  "step2": "Próxima decisão",
+  "step3": "Como você lida com a mídia?",
+  "step4": "Resultado Final",
+  "restart": "Recomeçar",
+  "save": "Salvar simulação",
+  "profile": {
+    "actor": "Ator / Actor",
+    "director": "Diretor / Director",
+    "writer": "Roteirista / Screenwriter"
+  },
+  "path": {
+    "marvel": "Assinar com a Marvel",
+    "studio": "Criar produtora",
+    "indie": "Fazer filme autoral",
+    "vanish": "Sumir por 2 anos"
+  },
+  "media": {
+    "controversial": "Entrevistas polêmicas",
+    "silent": "Desaparece das redes",
+    "pr": "Segue plano de PR",
+    "political": "Discurso político"
+  },
+  "results": {
+    "visionary": "Você é o Visionário Cultuado",
+    "commercial": "Você é o Astro Comercial",
+    "meme": "Você virou um Meme Global",
+    "fade": "Você se apagou aos poucos..."
+  }
+}

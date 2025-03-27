@@ -1,0 +1,34 @@
+
+{
+  "title": "You Just Won an Oscar",
+  "subtitle": "What's Next?",
+  "step1": "Choose your profile",
+  "step2": "Next move",
+  "step3": "How do you handle the media?",
+  "step4": "Final Outcome",
+  "restart": "Restart",
+  "save": "Save simulation",
+  "profile": {
+    "actor": "Actor / Ator",
+    "director": "Director / Diretor",
+    "writer": "Screenwriter / Roteirista"
+  },
+  "path": {
+    "marvel": "Sign with Marvel",
+    "studio": "Start a production company",
+    "indie": "Make an indie film",
+    "vanish": "Disappear for 2 years"
+  },
+  "media": {
+    "controversial": "Provocative interviews",
+    "silent": "Goes off-grid",
+    "pr": "Follows PR plan",
+    "political": "Speaks politically"
+  },
+  "results": {
+    "visionary": "You are the Cult Visionary",
+    "commercial": "You are the Commercial Star",
+    "meme": "You became a Global Meme",
+    "fade": "You quietly faded away..."
+  }
+}
