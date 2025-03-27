@@ -1,4 +1,3 @@
-
 function startGame() {
   document.getElementById('start-screen').classList.add('hidden');
   document.getElementById('app-container').classList.remove('hidden');
@@ -7,7 +6,14 @@ function startGame() {
 
 function setLang(lang) {
   localStorage.setItem("lang", lang);
-  location.reload();
+  if (document.getElementById("start-screen").classList.contains("hidden")) {
+    renderStep(currentStep);
+  } else {
+    document.querySelector("#start-screen p + p em").innerText =
+      lang === "en"
+        ? "You just won an Oscar. What happens next?"
+        : "Você acabou de ganhar um Oscar. E agora?";
+  }
 }
 
 function toggleTheme() {
@@ -18,7 +24,13 @@ function toggleTheme() {
   localStorage.setItem("theme", isDark ? 'light' : 'dark');
 }
 
-// Firebase save
+// Aplica tema salvo ao carregar
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  document.body.classList.remove("light", "dark");
+  document.body.classList.add(savedTheme);
+}
+
 function saveSimulation() {
   if (!firebase.firestore) return alert("Firebase não conectado");
 
@@ -33,7 +45,6 @@ function saveSimulation() {
     .catch(err => alert("Erro ao salvar: " + err.message));
 }
 
-// Placeholder simulation logic
 const steps = [
   {
     question: {
@@ -119,3 +130,5 @@ function restart() {
   window.selectedRole = "";
   renderStep(0);
 }
+
+
