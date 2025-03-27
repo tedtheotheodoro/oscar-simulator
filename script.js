@@ -7,11 +7,29 @@ let lang = localStorage.getItem("lang") || "pt";
 function setLanguage(language) {
   lang = language;
   localStorage.setItem("lang", language);
-  showQuestion();
+  updateIntroText();
 }
 
 function toggleTheme() {
   document.body.classList.toggle("dark");
+}
+
+function updateIntroText() {
+  const introText = document.getElementById("intro-text");
+  const subtext = document.getElementById("subtext");
+  const startBtn = document.getElementById("start-button");
+
+  if (introText && subtext && startBtn) {
+    introText.innerText = lang === "pt"
+      ? "Você acabou de ganhar um Oscar. E agora?"
+      : "You just won an Oscar. What happens next?";
+
+    subtext.innerText = lang === "pt"
+      ? "Simule sua jornada pós-estatueta."
+      : "Simulate your post-statuette journey.";
+
+    startBtn.innerText = lang === "pt" ? "Começar" : "Start";
+  }
 }
 
 function startSimulation() {
@@ -22,8 +40,8 @@ function startSimulation() {
 
 function showQuestion() {
   app.innerHTML = "";
-  const question = questions[currentQuestion];
 
+  const question = questions[currentQuestion];
   const title = document.createElement("h2");
   title.innerText = question.title[lang];
   app.appendChild(title);
@@ -32,7 +50,7 @@ function showQuestion() {
     const button = document.createElement("button");
     button.className = "main-button";
     button.innerText = option[lang];
-    button.onclick = () => handleAnswer(option["pt"]);
+    button.onclick = () => handleAnswer(option.pt);
     app.appendChild(button);
   });
 
@@ -70,41 +88,39 @@ function showResult() {
       ${lang === "pt" ? "Reiniciar" : "Restart"}
     </button>
   `;
+
   createLangAndThemeButtons();
 }
 
 function createLangAndThemeButtons() {
+  const langContainer = document.createElement("div");
+  langContainer.className = "lang-switch";
+
   const ptBtn = document.createElement("button");
   ptBtn.innerText = "PT";
   ptBtn.onclick = () => setLanguage("pt");
-  app.appendChild(ptBtn);
 
   const enBtn = document.createElement("button");
   enBtn.innerText = "EN";
   enBtn.onclick = () => setLanguage("en");
-  app.appendChild(enBtn);
 
-  const toggle = document.createElement("button");
-  toggle.innerText = "🌖";
-  toggle.onclick = toggleTheme;
-  app.appendChild(toggle);
+  langContainer.appendChild(ptBtn);
+  langContainer.appendChild(enBtn);
+  app.appendChild(langContainer);
+
+  const themeBtn = document.createElement("button");
+  themeBtn.innerText = "🌕";
+  themeBtn.onclick = toggleTheme;
+  themeBtn.className = "theme-button";
+  app.appendChild(themeBtn);
 }
 
+// Inicialização
 document.addEventListener("DOMContentLoaded", () => {
+  updateIntroText();
+
   const startBtn = document.getElementById("start-button");
-  const introText = document.getElementById("intro-text");
-  const subtext = document.getElementById("subtext");
-
-  if (startBtn && introText && subtext) {
-    introText.innerText = lang === "pt"
-      ? "Você acabou de ganhar um Oscar. E agora?"
-      : "You just won an Oscar. What happens next?";
-
-    subtext.innerText = lang === "pt"
-      ? "Simule sua jornada pós-estatueta."
-      : "Simulate your post-statuette journey.";
-
-    startBtn.innerText = lang === "pt" ? "Começar" : "Start";
+  if (startBtn) {
     startBtn.addEventListener("click", startSimulation);
   }
 
