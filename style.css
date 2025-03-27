@@ -1,12 +1,15 @@
 
+/* style.css */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light {
   background: #f9f9f9;
   color: #222;
-  transition: background 0.3s, color 0.3s;
-  text-align: center;
-  padding: 2rem;
 }
 
 body.dark {
@@ -14,21 +17,125 @@ body.dark {
   color: #eee;
 }
 
-.main-button, .secondary-button {
-  margin: 0.5rem;
-  padding: 0.7rem 1.2rem;
-  border: none;
-  border-radius: 2rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin: 1.5rem 0 1rem;
+}
+
+p, em {
   font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+button {
+  border: none;
   cursor: pointer;
-  background-color: #333;
-  color: #fff;
+  font-size: 1rem;
+  margin: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.main-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: #333;
+  color: white;
+}
+
+.main-button:hover {
+  background: #555;
 }
 
 .secondary-button {
-  background-color: #666;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: #ccc;
+  color: #000;
+}
+
+.secondary-button:hover {
+  background: #bbb;
 }
 
 .top-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.language-button, .theme-toggle {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.language-button:hover, .theme-toggle:hover {
+  background: #555;
+}
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   margin-top: 1rem;
+}
+
+.choice-label {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.result {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .main-button, .secondary-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .options-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem;
+  }
 }
