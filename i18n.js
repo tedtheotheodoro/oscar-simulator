@@ -1,2 +1,1 @@
-
-// Placeholder para internacionalização futura
+// Simple placeholder for future i18n expansion

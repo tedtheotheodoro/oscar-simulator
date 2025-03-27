@@ -7,42 +7,30 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="light">
-  <div id="start-screen" class="start-screen">
-    <div class="top-bar">
-      <div class="theme-toggle">
-        <button onclick="toggleTheme()">🌓</button>
-      </div>
+  <div class="top-bar">
+    <div class="language-switch">
+      <button onclick="switchLanguage('pt')">PT</button>
+      <button onclick="switchLanguage('en')">EN</button>
     </div>
-    <h1>🏆 Oscar Simulator</h1>
-    <p>Você acabou de ganhar um Oscar. E agora?</p>
-    <p><em>You just won an Oscar. What happens next?</em></p>
-    <button onclick="startGame()">Começar / Start</button>
+    <button id="darkModeToggle" onclick="toggleDarkMode()">🌕</button>
   </div>
-
-  <div class="container hidden" id="app-container">
-    <div class="top-bar">
-      <div class="lang-switch">
-        <button onclick="setLang('pt')">PT</button>
-        <button onclick="setLang('en')">EN</button>
-      </div>
-      <div class="theme-toggle">
-        <button onclick="toggleTheme()">🌓</button>
-      </div>
-    </div>
-
-    <h1 id="title"></h1>
-    <h2 id="subtitle"></h2>
-
-    <div id="app"></div>
-
+  <div class="container start-screen">
+    <h1>🏆 Oscar Simulator</h1>
+    <p id="subtitle">Você acabou de ganhar um Oscar. E agora?</p>
+    <p id="subtitle-en" class="subtitle-en"><em>You just won an Oscar. What happens next?</em></p>
+    <button onclick="startGame()" id="startBtn">Começar / Start</button>
+  </div>
+  <div class="container game hidden" id="game">
+    <h2 id="questionTitle">Choose your profile</h2>
+    <div id="options" class="options"></div>
     <div class="controls">
       <button onclick="saveSimulation()" id="saveBtn">Salvar simulação</button>
-      <button onclick="restart()" id="restartBtn">Reiniciar</button>
+      <button onclick="restartGame()" id="restartBtn">Reiniciar</button>
     </div>
   </div>
-
-  <script src="firebase.js"></script>
+  <script src="questions.js"></script>
   <script src="i18n.js"></script>
+  <script src="firebase.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

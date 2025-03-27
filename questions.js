@@ -1,66 +1,39 @@
-
-// firebase.js
 const questions = [
   {
-    id: 1,
-    title: {
-      pt: "Você acabou de ganhar um Oscar! E agora?",
-      en: "You just won an Oscar! What's next?"
-    },
-    choices: [
+    title: { pt: "Escolha seu perfil", en: "Choose your profile" },
+    options: [
       { pt: "Ator", en: "Actor" },
       { pt: "Diretor", en: "Director" },
       { pt: "Roteirista", en: "Screenwriter" }
     ]
   },
   {
-    id: 2,
-    title: {
-      pt: "Qual será seu próximo projeto?",
-      en: "What's your next move?"
-    },
-    choices: [
-      { pt: "Filme autoral", en: "Indie film" },
+    title: { pt: "Qual o seu próximo projeto?", en: "What's your next move?" },
+    options: [
+      { pt: "Filme autoral", en: "Arthouse movie" },
       { pt: "Blockbuster", en: "Blockbuster" },
-      { pt: "Série de streaming", en: "Streaming series" }
+      { pt: "Série streaming", en: "Streaming series" }
     ]
   },
   {
-    id: 3,
-    title: {
-      pt: "Você aceitaria fazer publicidade?",
-      en: "Would you do ads?"
-    },
-    choices: [
-      { pt: "Sim, claro!", en: "Yes, of course!" },
-      { pt: "Só se for por uma boa causa", en: "Only for a good cause" },
-      { pt: "De jeito nenhum", en: "No way" }
+    title: { pt: "Você aceitaria fazer publicidade?", en: "Would you do ads?" },
+    options: [
+      { pt: "Sim", en: "Yes" },
+      { pt: "Não", en: "No" }
     ]
   },
   {
-    id: 4,
-    title: {
-      pt: "Com quem você sonha em trabalhar agora?",
-      en: "Who do you dream of working with now?"
-    },
-    choices: [
-      { pt: "Diretor cult europeu", en: "Cult European director" },
-      { pt: "Um grande estúdio", en: "A major studio" },
-      { pt: "Coletivos independentes", en: "Indie collectives" }
+    title: { pt: "Você aceitaria um papel em outra língua?", en: "Would you take a role in another language?" },
+    options: [
+      { pt: "Sim", en: "Yes" },
+      { pt: "Não", en: "No" }
     ]
   },
   {
-    id: 5,
-    title: {
-      pt: "Como você lida com a fama?",
-      en: "How do you handle fame?"
-    },
-    choices: [
-      { pt: "Desapareço da mídia", en: "I vanish from the media" },
-      { pt: "Dou entrevistas impactantes", en: "I give strong interviews" },
-      { pt: "Entro nas redes e viralizo", en: "I go viral on social media" }
+    title: { pt: "Toparia ser jurado em um festival?", en: "Would you be a jury member at a festival?" },
+    options: [
+      { pt: "Claro!", en: "Sure!" },
+      { pt: "Não faz meu estilo", en: "Not my thing" }
     ]
   }
 ];
-
-export default questions;
