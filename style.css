@@ -1,12 +1,12 @@
 
-/* style.css - Estilo refinado e responsivo */
-
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  transition: background 0.3s, color 0.3s;
   background: #f9f9f9;
   color: #222;
+  transition: background 0.3s, color 0.3s;
+  text-align: center;
+  padding: 2rem;
 }
 
 body.dark {
@@ -14,83 +14,21 @@ body.dark {
   color: #eee;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-h1, h2 {
-  margin-bottom: 1rem;
-}
-
-.main-button,
-.secondary-button {
-  padding: 0.75rem 1.5rem;
+.main-button, .secondary-button {
   margin: 0.5rem;
-  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
   border: none;
   border-radius: 2rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
   background-color: #333;
-  color: white;
+  color: #fff;
 }
 
 .secondary-button {
-  background-color: #777;
-}
-
-.main-button:hover,
-.secondary-button:hover {
-  opacity: 0.9;
+  background-color: #666;
 }
 
 .top-bar {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  display: flex;
-  gap: 0.5rem;
-  z-index: 100;
-}
-
-.top-bar button {
-  padding: 0.5rem 0.75rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  background: #333;
-  color: white;
-}
-
-.top-bar button:hover {
-  opacity: 0.8;
-}
-
-.result {
-  font-size: 1.1rem;
-  margin-top: 1.5rem;
-  max-width: 500px;
-  line-height: 1.5;
-}
-
-@media (max-width: 600px) {
-  .main-button,
-  .secondary-button,
-  .top-bar button {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-
-  .container {
-    padding: 1rem;
-  }
+  margin-top: 1rem;
 }
