@@ -2,31 +2,27 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Oscar Simulator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Top bar -->
   <div class="top-bar">
     <div class="lang-switch">
       <button onclick="setLanguage('pt')">PT</button>
       <button onclick="setLanguage('en')">EN</button>
     </div>
     <div class="theme-switch">
-      <button onclick="toggleTheme()">🌕</button>
+      <button onclick="toggleTheme()">🌖</button>
     </div>
   </div>
-
-  <!-- Container principal com IDs para controle via JS -->
-  <div id="app" class="container">
+  <div id="app">
     <h1>🏆 Oscar Simulator</h1>
     <p id="intro-text"></p>
     <em id="subtext"></em><br><br>
     <button class="main-button" id="start-button"></button>
   </div>
 
-  <!-- Scripts -->
   <script src="questions.js"></script>
   <script src="script.js"></script>
   <script src="firebase.js"></script>

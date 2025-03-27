@@ -1,4 +1,3 @@
-// script.js com lógica de finais baseada em IF explícito e 5 variáveis
 
 const app = document.getElementById("app");
 let currentQuestion = 0;
@@ -8,7 +7,11 @@ let lang = localStorage.getItem("lang") || "pt";
 function setLanguage(language) {
   lang = language;
   localStorage.setItem("lang", language);
-  renderStartScreen();
+  showQuestion();
+}
+
+function toggleTheme() {
+  document.body.classList.toggle("dark");
 }
 
 function startSimulation() {
@@ -54,18 +57,6 @@ function showResult() {
     result = lang === "pt"
       ? "Você virou referência em faculdade de cinema alternativo. Seu filme é projetado em mostras com 5 pessoas e uma cabra."
       : "You became a reference in alternative film schools. Your movie screens at festivals for 5 people and a goat.";
-  } else if (profile === "Ator" && project === "Série streaming" && publicity === "Aceita" && buzz === "Sucesso de público" && path === "Contrato com streaming") {
-    result = lang === "pt"
-      ? "Seu rosto virou figurinha de WhatsApp e estampa canecas irônicas."
-      : "Your face is now a WhatsApp sticker and printed on ironic mugs.";
-  } else if (profile === "Diretor" && project === "Filme autoral" && publicity === "Recusa" && buzz === "Aclamado pela crítica" && path === "Outra indicação ao Oscar") {
-    result = lang === "pt"
-      ? "Você recusou 3 convites para a Marvel. Vive de elogios da crítica e pão artesanal."
-      : "You turned down 3 offers from Marvel. Living on critical praise and artisan bread.";
-  } else if (profile === "Roteirista" && project === "Série streaming" && publicity === "Recusa" && buzz === "Aclamado pela crítica" && path === "Sumir da mídia") {
-    result = lang === "pt"
-      ? "Ganhou 3 Emmys, nenhum reconhecimento da família. Pelo menos a crítica ama você."
-      : "Won 3 Emmys, no recognition from family. At least the critics love you.";
   } else {
     result = lang === "pt"
       ? "Você trilhou um caminho tão peculiar que o algoritmo surtou. Parabéns."
@@ -95,23 +86,27 @@ function createLangAndThemeButtons() {
 
   const toggle = document.createElement("button");
   toggle.innerText = "🌖";
-  toggle.onclick = () => document.body.classList.toggle("dark");
+  toggle.onclick = toggleTheme;
   app.appendChild(toggle);
 }
 
-function renderStartScreen() {
-  app.innerHTML = `
-    <h1>🏆 Oscar Simulator</h1>
-    <p>${lang === "pt"
-      ? "Você acabou de ganhar um Oscar. E agora?"
-      : "You just won an Oscar. What happens next?"}</p>
-    <br><br>
-    <button class="main-button" id="start-button">
-      ${lang === "pt" ? "Começar" : "Start"}
-    </button>
-  `;
-  document.getElementById("start-button").addEventListener("click", startSimulation);
-  createLangAndThemeButtons();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("start-button");
+  const introText = document.getElementById("intro-text");
+  const subtext = document.getElementById("subtext");
 
-document.addEventListener("DOMContentLoaded", renderStartScreen);
+  if (startBtn && introText && subtext) {
+    introText.innerText = lang === "pt"
+      ? "Você acabou de ganhar um Oscar. E agora?"
+      : "You just won an Oscar. What happens next?";
+
+    subtext.innerText = lang === "pt"
+      ? "Simule sua jornada pós-estatueta."
+      : "Simulate your post-statuette journey.";
+
+    startBtn.innerText = lang === "pt" ? "Começar" : "Start";
+    startBtn.addEventListener("click", startSimulation);
+  }
+
+  createLangAndThemeButtons();
+});
