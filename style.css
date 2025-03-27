@@ -4,10 +4,12 @@ body {
   font-family: 'Segoe UI', sans-serif;
   transition: background 0.3s, color 0.3s;
 }
+
 body.light {
   background: #f9f9f9;
   color: #222;
 }
+
 body.dark {
   background: #121212;
   color: #eee;
@@ -17,77 +19,31 @@ body.dark {
   padding: 2rem;
   text-align: center;
 }
+
 .hidden {
   display: none;
-}
-
-h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.start-screen p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-.start-screen p em {
-  font-size: 0.9em;
-  color: #aaa;
-}
-body.dark .start-screen p em {
-  color: #fff;
-  font-style: italic;
-}
-
-button {
-  margin: 10px;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 6px;
-  background-color: #444;
-  color: #fff;
-  cursor: pointer;
-}
-button:hover {
-  background-color: #666;
-}
-
-body.light button {
-  background-color: #ddd;
-  color: #000;
-}
-body.light button:hover {
-  background-color: #bbb;
 }
 
 .top-bar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
-  margin-bottom: 1rem;
+  padding: 0.5rem;
 }
 
-.choices div {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px;
-  background: #ddd;
+.lang-switch button, .theme-toggle button, .choices div, .controls button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #444;
+  color: white;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-.choices div:hover {
-  background: #ccc;
-}
-body.dark .choices div {
-  background: #333;
-  color: #fff;
-}
-body.dark .choices div:hover {
-  background: #555;
+
+.choices {
+  margin: 1rem 0;
 }
 
-.controls {
-  margin-top: 2rem;
+.choices div:hover, .controls button:hover {
+  background: #666;
 }

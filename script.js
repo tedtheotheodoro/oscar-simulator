@@ -1,3 +1,4 @@
+
 function startGame() {
   document.getElementById('start-screen').classList.add('hidden');
   document.getElementById('app-container').classList.remove('hidden');
@@ -24,7 +25,6 @@ function toggleTheme() {
   localStorage.setItem("theme", isDark ? 'light' : 'dark');
 }
 
-// Aplica tema salvo ao carregar
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme) {
   document.body.classList.remove("light", "dark");
@@ -47,25 +47,28 @@ function saveSimulation() {
 
 const steps = [
   {
-    question: {
-      pt: "Qual seu perfil?",
-      en: "Choose your profile"
-    },
-    choices: ["Ator / Actor", "Diretor / Director", "Roteirista / Screenwriter"]
+    question: { pt: "Qual seu perfil?", en: "Choose your profile" },
+    choices: [
+      { pt: "Ator", en: "Actor" },
+      { pt: "Diretor", en: "Director" },
+      { pt: "Roteirista", en: "Screenwriter" }
+    ]
   },
   {
-    question: {
-      pt: "Qual seu próximo projeto?",
-      en: "What's your next move?"
-    },
-    choices: ["Filme autoral", "Blockbuster", "Série streaming"]
+    question: { pt: "Qual seu próximo projeto?", en: "What's your next move?" },
+    choices: [
+      { pt: "Filme autoral", en: "Indie film" },
+      { pt: "Blockbuster", en: "Blockbuster" },
+      { pt: "Série streaming", en: "Streaming series" }
+    ]
   },
   {
-    question: {
-      pt: "Você aceitaria fazer publicidade?",
-      en: "Would you do ads?"
-    },
-    choices: ["Sim", "Depende", "Jamais"]
+    question: { pt: "Você aceitaria fazer publicidade?", en: "Would you do ads?" },
+    choices: [
+      { pt: "Sim", en: "Yes" },
+      { pt: "Depende", en: "Depends" },
+      { pt: "Jamais", en: "Never" }
+    ]
   }
 ];
 
@@ -89,10 +92,10 @@ function renderStep(index) {
 
   step.choices.forEach(choice => {
     const div = document.createElement("div");
-    div.innerText = choice;
+    div.innerText = `${choice[lang]} / ${choice[lang === "pt" ? "en" : "pt"]}`;
     div.onclick = () => {
-      if (index === 0) window.selectedRole = choice;
-      answers.push(choice);
+      if (index === 0) window.selectedRole = div.innerText;
+      answers.push(div.innerText);
       currentStep++;
       renderStep(currentStep);
     };
@@ -130,5 +133,3 @@ function restart() {
   window.selectedRole = "";
   renderStep(0);
 }
-
-
