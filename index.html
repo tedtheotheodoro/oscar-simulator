@@ -7,11 +7,22 @@
   <title>Oscar Simulator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="container">
-    <div class="lang-switch">
-      <button onclick="setLang('pt')">PT</button>
-      <button onclick="setLang('en')">EN</button>
+<body class="light">
+  <div id="start-screen" class="start-screen">
+    <h1>🏆 Oscar Simulator</h1>
+    <p>Você acabou de ganhar um Oscar. E agora?</p>
+    <button onclick="enterApp()">Começar / Start</button>
+  </div>
+
+  <div class="container hidden" id="app-container">
+    <div class="top-bar">
+      <div class="lang-switch">
+        <button onclick="setLang('pt')">PT</button>
+        <button onclick="setLang('en')">EN</button>
+      </div>
+      <div class="theme-toggle">
+        <button onclick="toggleTheme()">🌓</button>
+      </div>
     </div>
 
     <h1 id="title"></h1>
