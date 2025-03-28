@@ -18,8 +18,9 @@ window.questions = [
       en: "What's your next move?"
     },
     options: [
-      { value: "indie", label: { pt: "Filme autoral", en: "Indie film" } },
-      { value: "streaming", label: { pt: "Streaming", en: "Streaming" } }
+      { value: "indie_film", label: { pt: "Filme autoral", en: "Indie film" } },
+      { value: "blockbuster", label: { pt: "Blockbuster", en: "Blockbuster" } },
+      { value: "streaming_series", label: { pt: "Streaming", en: "Streaming" } }
     ]
   },
   {
