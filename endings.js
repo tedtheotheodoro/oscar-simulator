@@ -72,8 +72,8 @@ const endings = {
       en: "Became a meme, won an Emmy, back at the Oscars. Your career is a screenplay."
     }
     "actor|indie_film|decline_ads|critically_acclaimed|new_indie_project": {
-  pt: "Você virou referência em faculdades de cinema alternativo. Seu filme é projetado em mostras com 5 pessoas e uma cabra.",
-  en: "You became a reference in alternative film schools. Your movie screens at festivals for 5 people and a goat."
+      pt: "Você virou referência em faculdades de cinema alternativo. Seu filme é projetado em mostras com 5 pessoas e uma cabra.",
+      en: "You became a reference in alternative film schools. Your movie screens at festivals for 5 people and a goat."
     }
 
 };
