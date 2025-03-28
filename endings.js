@@ -72,5 +72,6 @@ const endings = {
       en: "Became a meme, won an Emmy, back at the Oscars. Your career is a screenplay."
     }
   };
-  
+  console.log("endings.js loaded");
+
   
