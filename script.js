@@ -1,3 +1,24 @@
+const app = document.getElementById("app");
+let currentQuestion = 0;
+let userAnswers = [];
+let lang = localStorage.getItem("lang") || "pt"; // Variável definida antes de tudo
+
+function setLanguage(language) {
+  lang = language;
+  localStorage.setItem("lang", language);
+  renderIntro();
+}
+
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
+
+function startSimulation() {
+  currentQuestion = 0;
+  userAnswers = [];
+  showQuestion();
+}
+
 function showQuestion() {
   const question = questions[currentQuestion];
   app.innerHTML = `
@@ -34,13 +55,8 @@ function showResult() {
   console.log("User answers key:", key);
   console.log("Available endings keys:", Object.keys(endings));
 
-  const outcome = endings[key];
-  
-  const resultText = outcome
-    ? outcome[lang]
-    : lang === "pt"
-      ? "Você trilhou um caminho tão peculiar que o algoritmo surtou. Parabéns."
-      : "Your path was so unexpected the simulator glitched. Congrats.";
+  // Como todas as 72 combinações estão mapeadas, usamos diretamente o final mapeado:
+  const resultText = endings[key][lang];
 
   app.innerHTML = `
     <h2>${lang === "pt" ? "Resultado da simulação:" : "Simulation result:"}</h2>
