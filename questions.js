@@ -54,10 +54,11 @@ const questions = [
       en: "Next career move?"
     },
     options: [
-      { key: "new_indie_project", pt: "Novo projeto autoral", en: "Another indie project" },
-      { key: "streaming_contract", pt: "Contrato com streaming", en: "Streaming contract" },
-      { key: "disappear", pt: "Sumir da mídia", en: "Disappear from spotlight" },
-      { key: "another_oscar_nom", pt: "Outra indicação ao Oscar", en: "Another Oscar nomination" }
+      { key: "blockbuster", pt: "Blockbuster", en: "Blockbuster" },
+      { key: "cult", pt: "Culto", en: "Cult" },
+      { key: "streaming", pt: "Contrato com streaming", en: "Streaming contract" }
     ]
   }
 ];
+
+export default questions;
