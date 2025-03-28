@@ -1,4 +1,4 @@
-const questions = [
+window.questions = [
   {
     key: "profile",
     title: {
@@ -7,8 +7,7 @@ const questions = [
     },
     options: [
       { value: "actor", label: { pt: "Ator", en: "Actor" } },
-      { value: "director", label: { pt: "Diretor", en: "Director" } },
-      { value: "screenwriter", label: { pt: "Roteirista", en: "Screenwriter" } }
+      { value: "writer", label: { pt: "Roteirista", en: "Writer" } }
     ]
   },
   {
@@ -18,9 +17,8 @@ const questions = [
       en: "What's your next move?"
     },
     options: [
-      { value: "indie_film", label: { pt: "Filme autoral", en: "Indie film" } },
-      { value: "blockbuster", label: { pt: "Blockbuster", en: "Blockbuster" } },
-      { value: "streaming_series", label: { pt: "Série streaming", en: "Streaming series" } }
+      { value: "indie", label: { pt: "Filme autoral", en: "Indie film" } },
+      { value: "streaming", label: { pt: "Streaming", en: "Streaming" } }
     ]
   },
   {
@@ -41,8 +39,8 @@ const questions = [
       en: "Your reception was..."
     },
     options: [
-      { value: "critically_acclaimed", label: { pt: "Aclamado pela crítica", en: "Critically acclaimed" } },
-      { value: "box_office_hit", label: { pt: "Sucesso de público", en: "Box office hit" } },
+      { value: "critics", label: { pt: "Aclamado pela crítica", en: "Critically acclaimed" } },
+      { value: "audience", label: { pt: "Sucesso de público", en: "Box office hit" } },
       { value: "both", label: { pt: "Ambos", en: "Both" } }
     ]
   },
@@ -60,6 +58,5 @@ const questions = [
   }
 ];
 
-export default questions;
 
 
