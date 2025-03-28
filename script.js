@@ -1,32 +1,11 @@
-const app = document.getElementById("app");
-let currentQuestion = 0;
-let userAnswers = [];
-let lang = localStorage.getItem("lang") || "pt";
-
-function setLanguage(language) {
-  lang = language;
-  localStorage.setItem("lang", language);
-  renderIntro();
-}
-
-function toggleTheme() {
-  document.body.classList.toggle("dark");
-}
-
-function startSimulation() {
-  currentQuestion = 0;
-  userAnswers = [];
-  showQuestion();
-}
-
 function showQuestion() {
   const question = questions[currentQuestion];
   app.innerHTML = `
     <h2>${question.title[lang]}</h2>
     <div class="options">
       ${question.options.map(option => `
-        <button class="main-button" onclick="handleAnswer('${option.key}')">
-          ${option[lang]}
+        <button class="main-button" onclick="handleAnswer('${option.value}')">
+          ${option.label[lang]}
         </button>`).join('')}
     </div>
     <div class="footer-buttons">
@@ -39,11 +18,9 @@ function showQuestion() {
 }
 
 function handleAnswer(answer) {
-  const currentOption = questions[currentQuestion].options.find(opt => opt.pt === answer || opt.en === answer);
-  const answerKey = currentOption ? currentOption.en : answer;
-
-  userAnswers.push(answerKey);
+  userAnswers.push(answer);
   currentQuestion++;
+
   if (currentQuestion < questions.length) {
     showQuestion();
   } else {
