@@ -58,7 +58,7 @@ Check it out here:
 
 ## 🧙‍♂️ Authors & Inspiration
 
-Built with love and sarcasm by [Your Name] and [Your Co-dev, if any].
+Built with love and a dash of sarcasm by @tedtheotheodoro.
 
 Inspired by awards season madness, career spirals, and the absurdity of fame.
 
