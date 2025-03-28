@@ -7,7 +7,7 @@ window.questions = [
     },
     options: [
       { value: "actor", label: { pt: "Ator", en: "Actor" } },
-      { value: "writer", label: { pt: "Roteirista", en: "Writer" } }
+      { value: "screenwriter", label: { pt: "Roteirista", en: "Screenwriter" } }
     ]
   },
   {
