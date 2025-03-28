@@ -1,3 +1,5 @@
+alert("endings carregado");
+
 const endings = {
     "screenwriter|indie_film|decline_ads|critically_acclaimed|new_indie_project": {
       pt: "Você virou referência em faculdade de cinema alternativo. Seu filme é projetado em mostras com 5 pessoas e uma cabra.",
@@ -71,7 +73,8 @@ const endings = {
       pt: "Virou meme, ganhou Emmy e voltou ao Oscar. Sua carreira é roteiro de filme.",
       en: "Became a meme, won an Emmy, back at the Oscars. Your career is a screenplay."
     }
-  };
+};
+  
   console.log("endings.js loaded");
 
   
