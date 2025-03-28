@@ -38,10 +38,11 @@ function showQuestion() {
   renderTopBar();
 }
 
-function handleAnswer(answer) {  
-  const current = questions[currentQuestion];
-  const englishAnswer = current.options.find(opt => opt[lang] === answer).en;
-  userAnswers.push(englishAnswer);
+function handleAnswer(answer) {
+  const currentOption = questions[currentQuestion].options.find(opt => opt.pt === answer || opt.en === answer);
+  const answerKey = currentOption ? currentOption.en : answer;
+
+  userAnswers.push(answerKey);
   currentQuestion++;
   if (currentQuestion < questions.length) {
     showQuestion();
