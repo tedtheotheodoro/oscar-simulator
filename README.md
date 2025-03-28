@@ -1,78 +1,67 @@
 
 # 🏆 Oscar Simulator
 
-Imagine que você acabou de ganhar um Oscar...
-E agora?
+You just won an Oscar. What happens next?  
+This simulator lets you explore the unpredictable — and often hilarious — paths of a post-statuette career.  
 
-Explore diferentes trajetórias pós-premiação, tome decisões, veja as consequências e descubra seu perfil na indústria cinematográfica.
+## 🎬 About
 
-🌐 [Acesse o simulador](https://oscar-simulator.vercel.app)
+**Oscar Simulator** is a satirical, bilingual web app (EN/PT) that lets users simulate what happens after they win an Academy Award. Through a series of five questions, users make career choices that lead to one of several outcomes — from critical darlings to complete disappearances from the spotlight.
 
----
+## 🌍 Features
 
-## 📸 Preview
+- ✨ Interactive 5-step career journey  
+- 🎭 Multiple roles: Actor, Director, or Screenwriter  
+- 🔀 18 unique and bizarre possible endings  
+- 🌗 Light/Dark mode toggle  
+- 🌐 Language switch: English / Português  
+- 🎯 Responsive design for desktop and mobile  
+- 🧠 Glitchy outcome if your path defies logic
 
-![preview](preview.gif)
+## 🚀 Live Demo
 
----
+Check it out here:  
+[https://oscar-simulator.vercel.app](https://oscar-simulator.vercel.app)
 
-## ✨ Funcionalidades
+## 📁 Project Structure
 
-- Internacionalização dinâmica (PT / EN)
-- Tela inicial visual com entrada animada
-- Trilha de decisões em 3 etapas
-- Cálculo de reputação (prestígio / lucro / relevância)
-- Resultado final personalizado
-- Salvamento no Firebase (modo leve)
-- Modo escuro / claro com memória de preferência
-
----
-
-## 🚀 Como rodar localmente
-
-```bash
-git clone https://github.com/seu-usuario/oscar-simulator.git
-cd oscar-simulator
-npm install (caso use Vite/React futuramente)
-Live Server no index.html (ou use extensão no VS Code)
+```
+📁 oscar-simulator
+├── index.html
+├── style.css
+├── script.js
+├── questions.js
+├── endings.js
 ```
 
----
+- `index.html`: HTML skeleton with language/theme toggles  
+- `style.css`: Final responsive styles  
+- `script.js`: Core logic, rendering, and game flow  
+- `questions.js`: Localized questions and options  
+- `endings.js`: All possible outcomes keyed by choices (in English)
 
-## 🔐 Como configurar o Firebase
+## 🧪 How to Run Locally
 
-1. Acesse [Firebase Console](https://console.firebase.google.com)
-2. Crie um novo projeto
-3. Habilite Firestore Database
-4. No código `firebase.js`, cole suas credenciais:
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/your-username/oscar-simulator.git
+   ```
 
-```js
-const firebaseConfig = {
-  apiKey: "...",
-  authDomain: "...",
-  projectId: "...",
-  ...
-};
-```
+2. Open `index.html` in your browser. That’s it!
 
----
+## 🛠 Tech Stack
 
-## 📌 Roadmap futuro
+- Vanilla JavaScript  
+- HTML5 + CSS3  
+- Vite (for dev, optional)  
+- Deployed via Vercel
 
-- Exportar resultado em PDF
-- Autenticação com Google para salvar trajetórias
-- Ranking público e compartilhamento
-- Perfis jogáveis com histórico
-- Desafios semanais (modo "Black Mirror")
+## 🧙‍♂️ Authors & Inspiration
 
----
+Built with love and sarcasm by [Your Name] and [Your Co-dev, if any].
 
-## 🧠 Idealização
+Inspired by awards season madness, career spirals, and the absurdity of fame.
 
-Criado por [@tedtheotheodoro](https://github.com/tedtheotheodoro) como experimento interativo sobre fama, cultura pop e escolhas criativas.
+## 📜 License
 
-Inspiração visual: sites de storytelling minimalista + simuladores narrativos estilo RPG.
-
----
-
-💬 Feedbacks e colaborações são bem-vindos!
+This project is open-source and free to remix. Just don’t use it to manifest an actual Oscar speech (or do, but credit us).
