@@ -1,6 +1,7 @@
 
 const questions = [
   {
+    key: "profile",
     title: {
       pt: "Escolha seu perfil",
       en: "Choose your profile"
@@ -12,6 +13,7 @@ const questions = [
     ]
   },
   {
+    key: "project",
     title: {
       pt: "Qual o seu próximo projeto?",
       en: "What's your next move?"
@@ -23,6 +25,7 @@ const questions = [
     ]
   },
   {
+    key: "ads",
     title: {
       pt: "Você aceitaria fazer publicidade?",
       en: "Would you do ads?"
@@ -33,6 +36,7 @@ const questions = [
     ]
   },
   {
+    key: "reception",
     title: {
       pt: "Sua repercussão foi...",
       en: "Your reception was..."
@@ -44,6 +48,7 @@ const questions = [
     ]
   },
   {
+    key: "career",
     title: {
       pt: "Próximo passo na carreira?",
       en: "Next career move?"

@@ -53,7 +53,12 @@ function handleAnswer(answer) {
 
 function showResult() {
   const key = userAnswers.join("|");
+
+  console.log("User answers key:", key);
+  console.log("Available endings keys:", Object.keys(endings));
+
   const outcome = endings[key];
+  
   const resultText = outcome
     ? outcome[lang]
     : lang === "pt"
