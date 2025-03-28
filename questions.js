@@ -6,9 +6,9 @@ const questions = [
       en: "Choose your profile"
     },
     options: [
-      { key: "actor", pt: "Ator", en: "Actor" },
-      { key: "director", pt: "Diretor", en: "Director" },
-      { key: "screenwriter", pt: "Roteirista", en: "Screenwriter" }
+      { value: "actor", label: { pt: "Ator", en: "Actor" } },
+      { value: "director", label: { pt: "Diretor", en: "Director" } },
+      { value: "screenwriter", label: { pt: "Roteirista", en: "Screenwriter" } }
     ]
   },
   {
@@ -18,9 +18,9 @@ const questions = [
       en: "What's your next move?"
     },
     options: [
-      { key: "indie_film", pt: "Filme autoral", en: "Indie film" },
-      { key: "blockbuster", pt: "Blockbuster", en: "Blockbuster" },
-      { key: "streaming_series", pt: "Série streaming", en: "Streaming series" }
+      { value: "indie_film", label: { pt: "Filme autoral", en: "Indie film" } },
+      { value: "blockbuster", label: { pt: "Blockbuster", en: "Blockbuster" } },
+      { value: "streaming_series", label: { pt: "Série streaming", en: "Streaming series" } }
     ]
   },
   {
@@ -30,8 +30,8 @@ const questions = [
       en: "Would you do ads?"
     },
     options: [
-      { key: "accept_ads", pt: "Aceita", en: "Yes" },
-      { key: "decline_ads", pt: "Recusa", en: "No" }
+      { value: "accept_ads", label: { pt: "Aceita", en: "Yes" } },
+      { value: "decline_ads", label: { pt: "Recusa", en: "No" } }
     ]
   },
   {
@@ -41,9 +41,9 @@ const questions = [
       en: "Your reception was..."
     },
     options: [
-      { key: "critically_acclaimed", pt: "Aclamado pela crítica", en: "Critically acclaimed" },
-      { key: "box_office_hit", pt: "Sucesso de público", en: "Box office hit" },
-      { key: "both", pt: "Ambos", en: "Both" }
+      { value: "critically_acclaimed", label: { pt: "Aclamado pela crítica", en: "Critically acclaimed" } },
+      { value: "box_office_hit", label: { pt: "Sucesso de público", en: "Box office hit" } },
+      { value: "both", label: { pt: "Ambos", en: "Both" } }
     ]
   },
   {
@@ -53,12 +53,13 @@ const questions = [
       en: "Next career move?"
     },
     options: [
-      { key: "blockbuster", pt: "Blockbuster", en: "Blockbuster" },
-      { key: "cult", pt: "Culto", en: "Cult" },
-      { key: "streaming", pt: "Contrato com streaming", en: "Streaming contract" }
+      { value: "blockbuster", label: { pt: "Blockbuster", en: "Blockbuster" } },
+      { value: "cult", label: { pt: "Culto", en: "Cult" } },
+      { value: "streaming", label: { pt: "Contrato com streaming", en: "Streaming contract" } }
     ]
   }
 ];
 
 export default questions;
+
 
