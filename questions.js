@@ -6,9 +6,9 @@ const questions = [
       en: "Choose your profile"
     },
     options: [
-      { pt: "Ator", en: "Actor" },
-      { pt: "Diretor", en: "Director" },
-      { pt: "Roteirista", en: "Screenwriter" }
+      { key: "actor", pt: "Ator", en: "Actor" },
+      { key: "director", pt: "Diretor", en: "Director" },
+      { key: "screenwriter", pt: "Roteirista", en: "Screenwriter" }
     ]
   },
   {
@@ -17,9 +17,9 @@ const questions = [
       en: "What's your next move?"
     },
     options: [
-      { pt: "Filme autoral", en: "Indie film" },
-      { pt: "Blockbuster", en: "Blockbuster" },
-      { pt: "Série streaming", en: "Streaming series" }
+      { key: "indie_film", pt: "Filme autoral", en: "Indie film" },
+      { key: "blockbuster", pt: "Blockbuster", en: "Blockbuster" },
+      { key: "streaming_series", pt: "Série streaming", en: "Streaming series" }
     ]
   },
   {
@@ -28,8 +28,8 @@ const questions = [
       en: "Would you do ads?"
     },
     options: [
-      { pt: "Aceita", en: "Yes" },
-      { pt: "Recusa", en: "No" }
+      { key: "accept_ads", pt: "Aceita", en: "Yes" },
+      { key: "decline_ads", pt: "Recusa", en: "No" }
     ]
   },
   {
@@ -38,9 +38,9 @@ const questions = [
       en: "Your reception was..."
     },
     options: [
-      { pt: "Aclamado pela crítica", en: "Critically acclaimed" },
-      { pt: "Sucesso de público", en: "Box office hit" },
-      { pt: "Ambos", en: "Both" }
+      { key: "critically_acclaimed", pt: "Aclamado pela crítica", en: "Critically acclaimed" },
+      { key: "box_office_hit", pt: "Sucesso de público", en: "Box office hit" },
+      { key: "both", pt: "Ambos", en: "Both" }
     ]
   },
   {
@@ -49,10 +49,10 @@ const questions = [
       en: "Next career move?"
     },
     options: [
-      { pt: "Novo projeto autoral", en: "Another indie project" },
-      { pt: "Contrato com streaming", en: "Streaming contract" },
-      { pt: "Sumir da mídia", en: "Disappear from spotlight" },
-      { pt: "Outra indicação ao Oscar", en: "Another Oscar nomination" }
+      { key: "new_indie_project", pt: "Novo projeto autoral", en: "Another indie project" },
+      { key: "streaming_contract", pt: "Contrato com streaming", en: "Streaming contract" },
+      { key: "disappear", pt: "Sumir da mídia", en: "Disappear from spotlight" },
+      { key: "another_oscar_nom", pt: "Outra indicação ao Oscar", en: "Another Oscar nomination" }
     ]
   }
 ];
