@@ -55,8 +55,16 @@ function showResult() {
   console.log("User answers key:", key);
   console.log("Available endings keys:", Object.keys(endings));
 
-  // Como todas as 72 combinações estão mapeadas, usamos diretamente o final mapeado:
-  const resultText = endings[key][lang];
+  // Correção: evita erro se a chave não estiver no endings
+  const resultText = endings[key]?.[lang] || (
+    lang === "pt"
+      ? "Você trilhou um caminho tão peculiar que o algoritmo surtou. Parabéns."
+      : "Your path was so unexpected the simulator glitched. Congrats."
+  );
+
+  if (!endings[key]) {
+    console.warn(`⚠️ Final ausente para a chave: ${key}`);
+  }
 
   app.innerHTML = `
     <h2>${lang === "pt" ? "Resultado da simulação:" : "Simulation result:"}</h2>
