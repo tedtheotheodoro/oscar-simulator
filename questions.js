@@ -8,7 +8,7 @@ window.questions = [
     options: [
       { value: "actor", label: { pt: "Ator", en: "Actor" } },
       { value: "director", label: { pt: "Diretor", en: "Director" } },
-      { value: "screenwriter", label: { pt: "Roteirista", en: "Screenwriter" } }
+      { value: "writer", label: { pt: "Roteirista", en: "Screenwriter" } }
     ]
   },
   {
@@ -18,9 +18,9 @@ window.questions = [
       en: "What's your next move?"
     },
     options: [
-      { value: "indie_film", label: { pt: "Filme autoral", en: "Indie film" } },
+      { value: "indie", label: { pt: "Filme autoral", en: "Indie film" } },
       { value: "blockbuster", label: { pt: "Blockbuster", en: "Blockbuster" } },
-      { value: "streaming_series", label: { pt: "Streaming", en: "Streaming" } }
+      { value: "streaming", label: { pt: "Streaming", en: "Streaming" } }
     ]
   },
   {
