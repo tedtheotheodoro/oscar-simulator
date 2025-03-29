@@ -1,67 +1,113 @@
-
 # 🏆 Oscar Simulator
 
-You just won an Oscar. What happens next?  
-This simulator lets you explore the unpredictable — and often hilarious — paths of a post-statuette career.  
+**PT-BR** | [English below](#-oscar-simulator-en)
 
-## 🎬 About
+Você acaba de ganhar um Oscar. E agora?
 
-**Oscar Simulator** is a satirical, bilingual web app (EN/PT) that lets users simulate what happens after they win an Academy Award. Through a series of five questions, users make career choices that lead to one of several outcomes — from critical darlings to complete disappearances from the spotlight.
+O **Oscar Simulator** é uma experiência interativa que te convida a simular sua trajetória pós-estatueta. Navegue por dilemas, decisões de carreira e os efeitos colaterais da fama. Cada escolha revela uma nova versão do que sua carreira poderia se tornar.
 
-## 🌍 Features
+🔗 **Acesse o jogo:**  
+https://oscar-simulator.vercel.app/
 
-- ✨ Interactive 5-step career journey  
-- 🎭 Multiple roles: Actor, Director, or Screenwriter  
-- 🔀 18 unique and bizarre possible endings  
-- 🌗 Light/Dark mode toggle  
-- 🌐 Language switch: English / Português  
-- 🎯 Responsive design for desktop and mobile  
-- 🧠 Glitchy outcome if your path defies logic
+---
 
-## 🚀 Live Demo
+## 📌 Como funciona
 
-Check it out here:  
-[https://oscar-simulator.vercel.app](https://oscar-simulator.vercel.app)
+- Escolha seu perfil: ator, diretor ou roteirista.
+- Decida o próximo passo após o Oscar.
+- Enfrente os dilemas do estrelato e da indústria.
+- Descubra um dos **72 finais possíveis** — alguns gloriosos, outros... nem tanto.
 
-## 📁 Project Structure
+O simulador é bilíngue (PT/EN), responsivo e com suporte a tema claro/escuro.
 
+---
+
+## 💻 Tecnologias
+
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Firebase](https://firebase.google.com/)
+- [Vercel](https://vercel.com/)
+
+---
+
+## 📂 Instalação local
+
+```bash
+git clone https://github.com/tedtheotheodoro/oscar-simulator.git
+cd oscar-simulator
+npm install
+npm run dev
 ```
-📁 oscar-simulator
-├── index.html
-├── style.css
-├── script.js
-├── questions.js
-├── endings.js
+
+---
+
+## ✍️ Criação e conceito
+
+Desenvolvido por [@tedtheotheodoro](https://github.com/tedtheotheodoro) como um experimento interativo de linguagem, ironia e escolhas narrativas.
+
+---
+
+## ⚠️ Aviso
+
+Este projeto é uma crítica criativa ao funcionamento da indústria do entretenimento e não faz referência a indivíduos específicos.
+
+---
+
+---
+
+## 🏆 Oscar Simulator (EN)
+
+You just won an Oscar. What happens next?
+
+**Oscar Simulator** is an interactive experience where you simulate your post-Oscar journey. Make career choices, face the dilemmas of stardom, and unveil one of many possible paths in the entertainment industry.
+
+🔗 **Play the game:**  
+https://oscar-simulator.vercel.app/
+
+---
+
+## 📌 How it works
+
+- Pick your profile: actor, director, or screenwriter.
+- Choose your next move.
+- Navigate industry and fame dilemmas.
+- Reveal one of **72 possible endings** — some glorious, others… not so much.
+
+The game is fully bilingual (PT/EN), mobile-friendly, and supports light/dark mode.
+
+---
+
+## 💻 Tech stack
+
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Firebase](https://firebase.google.com/)
+- [Vercel](https://vercel.com/)
+
+---
+
+## 📂 Local installation
+
+```bash
+git clone https://github.com/tedtheotheodoro/oscar-simulator.git
+cd oscar-simulator
+npm install
+npm run dev
 ```
 
-- `index.html`: HTML skeleton with language/theme toggles  
-- `style.css`: Final responsive styles  
-- `script.js`: Core logic, rendering, and game flow  
-- `questions.js`: Localized questions and options  
-- `endings.js`: All possible outcomes keyed by choices (in English)
+---
 
-## 🧪 How to Run Locally
+## ✍️ Credits
 
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/your-username/oscar-simulator.git
-   ```
+Created by [@tedtheotheodoro](https://github.com/tedtheotheodoro) as a narrative and interactive language experiment.
 
-2. Open `index.html` in your browser. That’s it!
+---
 
-## 🛠 Tech Stack
+## ⚠️ Disclaimer
 
-- Vanilla JavaScript  
-- HTML5 + CSS3  
-- Vite (for dev, optional)  
-- Deployed via Vercel
+This project is a satirical commentary on the entertainment industry as a whole. No real individuals are referenced.
 
-## 🧙‍♂️ Authors & Inspiration
-
-Built with love and a dash of sarcasm by @tedtheotheodoro.
-
-Inspired by awards season madness, career spirals, and the absurdity of fame.
-
-## 📜 License
-
-This project is open-source and free to remix. Just don’t use it to manifest an actual Oscar speech (or do, but credit us).
+---
